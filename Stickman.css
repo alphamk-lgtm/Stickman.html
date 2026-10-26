@@ -7,14 +7,14 @@ body {
   margin: 0;
   padding: 15px;
   background: #101528;
-  color: white;
+  color: green;
   font-family: Arial, sans-serif;
   text-align: center;
   user-select: none;
 }
 
 h1 {
-  color: #00e5ff;
+  color:White;
   font-size: 28px;
   text-shadow: 0 0 12px #00bfff;
 }
@@ -129,7 +129,7 @@ button:active {
 }
 
 p {
-  color: #bfc9e7;
+  color: White;
   font-size: 14px;
 }
 
