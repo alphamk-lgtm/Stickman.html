@@ -3,50 +3,44 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
-  <title>Mukumba Stickman Fight</title>
-  <link rel="stylesheet" href="Stickman.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stickman Battle</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>MK STICKMAN FIGHT</h1>
+  <h1>STICKMAN BATTLE</h1>
 
-  <div class="game-box">
+  <div class="hud">
     <div class="health-box">
-      <div class="fighter-health">
-        <span>PLAYER</span>
-        <div class="bar">
-          <div id="playerHealth" class="fill"></div>
-        </div>
-      </div>
-
-      <div class="fighter-health">
-        <span>ENEMY</span>
-        <div class="bar">
-          <div id="enemyHealth" class="fill enemy-fill"></div>
-        </div>
-      </div>
+      <span>PLAYER</span>
+      <div class="health"><div id="playerHealth"></div></div>
     </div>
-
-    <canvas id="game" width="800" height="400"></canvas>
-    <div id="message">FIGHT!</div>
+    <div class="health-box">
+      <span>ENEMY</span>
+      <div class="health"><div id="enemyHealth"></div></div>
+    </div>
   </div>
+
+  <div id="stats">COMBO: <span id="combo">0</span></div>
+
+  <div class="arena">
+    <canvas id="game" width="800" height="400"></canvas>
+    <div id="message" class="hidden">
+      <h2 id="result">YOU WIN!</h2>
+      <button id="restart">PLAY AGAIN</button>
+    </div>
+  </div>
+
+  <p>Move: A / D | Jump: W | Punch: J | Special: K</p>
 
   <div class="controls">
-    <div class="movement">
-      <button id="left">◀</button>
-      <button id="right">▶</button>
-    </div>
-
-    <div class="actions">
-      <button id="jump">JUMP</button>
-      <button id="attack">PUNCH 👊</button>
-    </div>
+    <button data-key="a">◀</button>
+    <button data-key="w">JUMP</button>
+    <button data-key="d">▶</button>
+    <button data-key="j">PUNCH</button>
+    <button data-key="k">SPECIAL</button>
   </div>
 
-  <button id="restart">PLAY AGAIN</button>
-  <p>Move, jump and punch to defeat your enemy!</p>
-
-  <script src="Stickman.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
