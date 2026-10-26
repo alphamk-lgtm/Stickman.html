@@ -6,130 +6,115 @@
 body {
   margin: 0;
   padding: 15px;
-  background: #101528;
-  color: green;
+  background: #101426;
+  color: white;
   font-family: Arial, sans-serif;
   text-align: center;
-  user-select: none;
 }
 
 h1 {
-  color:White;
-  font-size: 28px;
-  text-shadow: 0 0 12px #00bfff;
+  color: #00e5ff;
+  letter-spacing: 3px;
 }
 
-.game-box {
-  position: relative;
+.hud {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
   max-width: 800px;
-  margin: auto;
-  border: 3px solid #00e5ff;
-  border-radius: 10px;
-  overflow: hidden;
-  background: #18264b;
-}
-
-#game {
-  display: block;
-  width: 100%;
-  height: auto;
+  margin: 20px auto 10px;
 }
 
 .health-box {
-  position: absolute;
-  z-index: 2;
-  top: 10px;
-  left: 10px;
-  right: 10px;
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
+  width: 48%;
   text-align: left;
-}
-
-.fighter-health {
-  width: 43%;
-  font-size: 12px;
   font-weight: bold;
 }
 
-.bar {
-  height: 14px;
-  margin-top: 4px;
-  background: #333;
-  border: 1px solid white;
-  border-radius: 5px;
-  overflow: hidden;
+.health {
+  height: 20px;
+  background: #555;
+  border: 2px solid white;
+  margin-top: 5px;
 }
 
-.fill {
-  width: 100%;
+.health div {
   height: 100%;
-  background: #00ef72;
-  transition: width 0.1s;
+  width: 100%;
+  background: #24ed72;
+  transition: width 0.15s;
 }
 
-.enemy-fill {
-  background: #ff3859;
+#enemyHealth {
+  background: #ff4058;
+}
+
+#stats {
+  margin: 10px;
+  color: #ffdb4d;
+  font-weight: bold;
+}
+
+.arena {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  border: 3px solid #00e5ff;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  background: #20294b;
 }
 
 #message {
   position: absolute;
-  top: 40%;
-  width: 100%;
-  color: #ffe600;
-  font-size: 30px;
+  inset: 0;
+  background: #101426dd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#message.hidden {
+  display: none;
+}
+
+#result {
+  color: #ffdb4d;
+  font-size: 32px;
+}
+
+button {
+  border: 2px solid #00e5ff;
+  border-radius: 8px;
+  padding: 13px 16px;
+  background: #26365e;
+  color: white;
   font-weight: bold;
-  text-shadow: 2px 2px 5px black;
-  pointer-events: none;
+  cursor: pointer;
+  touch-action: none;
+  user-select: none;
+}
+
+button:active {
+  background: #007f9a;
 }
 
 .controls {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-  max-width: 800px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
   margin: 20px auto;
-}
-
-.movement, .actions {
-  display: flex;
-  gap: 10px;
-}
-
-button {
-  border: none;
-  border-radius: 12px;
-  padding: 15px;
-  font-size: 16px;
-  font-weight: bold;
-  color: white;
-  background: #304a85;
-  touch-action: none;
-  cursor: pointer;
-}
-
-button:active {
-  transform: scale(0.94);
-  background: #087cdb;
-}
-
-#attack {
-  background: #e63852;
-}
-
-#jump {
-  background: #7651dc;
-}
-
-#restart {
-  background: #00a86b;
-  margin: 5px;
+  max-width: 600px;
 }
 
 p {
-  color: White;
+  color: #c8d4ff;
   font-size: 14px;
 }
 
@@ -142,16 +127,7 @@ p {
     font-size: 23px;
   }
 
-  .controls {
-    gap: 5px;
-  }
-
-  .movement, .actions {
-    gap: 5px;
-  }
-
-  button {
-    padding: 13px 10px;
-    font-size: 13px;
+  .controls button {
+    padding: 12px;
   }
 }
